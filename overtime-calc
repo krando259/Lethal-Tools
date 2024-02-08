@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
+</style>
+
+<script>
+function Overtime() {
+var quota = document.getElementById("quota").value
+var scrap = document.getElementById("scrap").value
+if (document.getElementById("day").value > 0 ) 
+{var modifier = 15 *  document.getElementById("day").value}
+else 
+{var modifier = -15}
+if (Math.round(((scrap - quota)/5)+ modifier) < 0) {
+var bonusamount = 0}
+else {
+
+
+var bonusamount = Math.round(
+((scrap - quota)
+/5)
++ modifier)
+}
+
+document.getElementById("bonus").innerHTML = bonusamount
+
+}
+</script>
+
+
+</head>
+<body class="w3-light-grey">
+
+<!-- Page Container -->
+<div class="w3-content w3-margin-top" style="max-width:1400px;">
+
+  <!-- The Grid -->
+  <div class="w3-row-padding">
+  
+    <!-- Left Column -->
+    <div class="w3-third">
+    
+      <div class="w3-white w3-text-grey w3-card-4">
+        <div class="w3-display-container">
+          <img src="/w3images/avatar_hat.jpg" style="width:100%" alt="Avatar">
+          <div class="w3-display-bottomleft w3-container w3-text-black">
+           
+          </div>
+        </div>
+        <div class="w3-container">
+		 <h2>Lethal Tools</h2>
+          <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i></p>
+          <hr>
+
+          <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Tools</b></p>
+          <p><a href=null>Overtime Calculator</a></p>
+         
+
+    <!-- End Left Column -->
+    </div>
+
+    <!-- Right Column -->
+    <div class="w3-twothird">
+    
+      <div class="w3-container w3-card w3-white w3-margin-bottom">
+        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Lethal Tools</h2>
+        <div class="w3-container">
+         <h6 class="w3-text-teal"><i class="fa fa-calculator fa-fw w3-margin-right"></i>Overtime Calculator <span class="w3-tag w3-teal w3-round"></span></h6>
+         
+	
+		<label for="quota">Quota<label><br>
+		<input type="number" id="quota" name="quota" value="000"><br>
+		<label for="scrap">Scrap Sold<label><br>
+		<input type="number" id="scrap" name="scrap" value="000"><br><br>
+		<label for="day">Days left till quota<label><br>
+		<input type="number" id="day" name="day" value="000"><br><br>
+		<button onclick="Overtime()">Calculate</button><br>
+		<p id="bonus" class="fa fa-money fa-fw w3-margin-right w3-xxlarge w3-text-teal">000</p>
+
+		 
+
+   
+
+<footer class="w3-container w3-teal w3-center w3-margin-top">
+
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+</footer>
+
+</body>
+</html>
